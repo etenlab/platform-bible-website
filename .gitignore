@@ -27,3 +27,10 @@ yarn-error.log*
 cdk.out
 cdk.context.json
 infra/node_modules/*
+
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions

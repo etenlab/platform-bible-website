@@ -1,0 +1,49 @@
+name: PROD Upload Platform Bible Website to S3
+on:
+  push:
+    branches:
+      - prod
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_PROD_S3_PUSHER_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_PROD_S3_PUSHER_SECRET_ACCESS_KEY }}
+          aws-region: us-east-2
+
+      - uses: dkershner6/aws-ssm-getparameters-action@v1
+        with:
+          parameterPairs: "/prod/deploy/platform.bible/env = ENV"
+
+      - name: store env
+        run: |
+          cat << EOF > .env
+          ${{ env.ENV }}
+          EOF
+
+      - name: Load env
+        uses: xom9ikk/dotenv@v2
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build
+        run: yarn build
+
+      - uses: TimekillerTK/s3-sync-action@master
+        with:
+          args: --follow-symlinks --delete
+        env:
+          SOURCE_DIR: "build"
