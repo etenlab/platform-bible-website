@@ -1,0 +1,12 @@
+# AWS env settings
+awsAccountId: '808019037620'
+awsRegion: 'us-east-2'
+
+# Prefix used to identify app CloudFormation component
+appPrefix: 'platform-bible-dev'
+
+app:
+  appId: platform-bible-app
+  domainName: dev.platform.bible
+  enabled: true
+  createCustomDomain: true

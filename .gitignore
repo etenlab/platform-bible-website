@@ -22,6 +22,12 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+#infra
+.cdk.staging
+cdk.out
+cdk.context.json
+infra/node_modules/*
+
 .pnp.*
 .yarn/*
 !.yarn/patches
