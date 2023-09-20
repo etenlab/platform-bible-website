@@ -26,4 +26,4 @@ yarn-error.log*
 .cdk.staging
 cdk.out
 cdk.context.json
-infra/node_modules
+infra/node_modules/*
