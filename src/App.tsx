@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>platform.Bible</p>
-        <p>coming soon</p>
+        <p>coming soon!</p>
       </header>
     </div>
   );
