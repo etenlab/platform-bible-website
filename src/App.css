@@ -14,8 +14,9 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-image: url('../public/banner.jpg'); /* Set the background image */
+  background-size: cover; /* Cover the entire element */
+  min-height: 65vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,3 +37,11 @@
     transform: rotate(360deg);
   }
 }
+
+/* Styles for the main content */
+.main-content {
+  padding: 2rem;
+  background-color: #f4f4f4;
+  min-height: 28vh;
+}
+
