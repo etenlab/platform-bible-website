@@ -1,47 +1,19 @@
+/* Set background properties to fill the whole page */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-image: url('../public/banner.jpg'); /* Set the background image */
-  background-size: cover; /* Cover the entire element */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(50px + 2vmin);
-  color: white;
+  background-color: #f4f4f4; 
+  background-image: url('../public/background.jpg'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
+/* Style the image */
 .logo {
-  width: 150px; 
-  height: 150px; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  max-width: 50%; /* Ensure the image doesn't exceed the viewport width */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 90px; 
 }
